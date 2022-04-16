@@ -42,7 +42,7 @@ COPY --from=0 /go/bin/hugo /usr/local/bin/hugo
 
 WORKDIR /src
 
-COPY . /src
+COPY ./* /src
 
 USER hugo:hugo
 
