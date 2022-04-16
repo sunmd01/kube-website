@@ -17,6 +17,6 @@ jobs:
     - name: Docker login
       run: docker login --username=${{ secrets.DOCKER_USERNAME }}  registry.cn-hangzhou.aliyuncs.com  --password=${{ secrets.DOCKER_PASSWORD }} 
     - name: Build the Docker image
-      run: docker build . --network=host --tag registry.cn-hangzhou.aliyuncs.com/sunmd/k8s-website-hugo:v1 --build-arg HUGO_VERSION=0.87.0
+      run: docker build . --network=host --tag registry.cn-hangzhou.aliyuncs.com/sunmd/kube-website:v1 --build-arg HUGO_VERSION=0.87.0
     - name: Push Docker image
       run: docker push registry.cn-hangzhou.aliyuncs.com/sunmd/kube-website:v1
