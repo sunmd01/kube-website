@@ -18,7 +18,5 @@ jobs:
       run: docker login --username=${{ secrets.DOCKER_USERNAME }}  registry.cn-hangzhou.aliyuncs.com  --password=${{ secrets.DOCKER_PASSWORD }} 
     - name: Build the Docker image
       run: make container-image
-    - name: Docker tag
-      run: docker tag  gcr.io/k8s-staging-sig-docs/k8s-website-hugo:v0.87.0-7859bd25004b  registry.cn-hangzhou.aliyuncs.com/sunmd/kube-website:$(date +%s)
     - name: Push Docker image
-      run: docker push registry.cn-hangzhou.aliyuncs.com/sunmd/kube-website:$(date +%s)
+      run: docker push registry.cn-hangzhou.aliyuncs.com/sunmd/kube-website:v1
